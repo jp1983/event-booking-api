@@ -66,7 +66,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Setup Instructions
 1. Clone the repository:
 
-git clone https://github.com/jp1983/event-booking.api.git
+git clone https://github.com/jp1983/event-booking-api.git
 
 2. Install dependencies:
 composer install
@@ -78,18 +78,29 @@ php artisan migrate
 php artisan serve
 
 ## API Endpoints
-# check the routes/api.php for all api endpoints
+### check the routes/api.php for all api endpoints
+
 ### Authentication
 - `POST /register` - Register a user
 - `POST /login` - Authenticate a user
+- `POST /logout` - Logout a user
 
 ### Event Management
-- `GET /events` - List all events
+- `GET /events` - List all events with Authication
 - `POST /events` - Create an event
 - `PUT /events/{id}` - Update an event
+- `DELETE /events/{id}` - Delete an event
+
+### Attendees Management
+- `GET /attendees` - List all attendees
+- `POST /attendees` - Create an attendees
+- `PUT /attendees/{id}` - Update an attendees
+- `DELETE /attendees/{id}` - Delete an attendees
 
 ### Booking System
 - `POST /bookings` - Book an event
+- `DELETE /bookings/{id}` - Delete an event
+- `GET /bookings/{event_id}` - List all bookings
 
 ### Testing
 Run:
